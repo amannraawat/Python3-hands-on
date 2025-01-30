@@ -1,7 +1,7 @@
 from sys import exit
 
 def gold_room():
-    print("this room is full of gold. How much do you take?")
+    print("This room is full of gold. How much do you take?")
     
     choice = input("> ")
     if "0" in choice or "1" in choice:
@@ -15,6 +15,7 @@ def gold_room():
         
     else:
         dead("You r greedy bastard!")
+       
         
 def bear_room():
     print("There is a bear here")
@@ -27,16 +28,18 @@ def bear_room():
         choice = input("> ")
         
         if choice == "take honey":
-            dead("the bear looks at you and then slaps your face off")
+            dead("the bear looks at you and then slaps your face off.")
         elif choice == "taunt bear" and not bear_moved:
             print("the bear has moved from the door")
             print("you can go through it now")
+            bear_moved=True
         elif choice == "taunt bear" and bear_moved:
-            dead("the bear gets pissed off and chews your leg off")
+            dead("the bear gets pissed off and chews your leg off.")
         elif choice =="open door" and bear_moved:
             gold_room()
         else:
             print("I got no idea what that means.")
+         
             
 def cthulhu_room():
     print("Here you see the great evil Cthulhu.")
@@ -51,9 +54,11 @@ def cthulhu_room():
     else:
         cthulhu_room()
 
+
 def dead(why):
     print(why, "Good job")
     exit(0)
+    
     
 def start():
     print("You are in a dark room.")
